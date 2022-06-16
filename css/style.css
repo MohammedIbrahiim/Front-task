@@ -1,71 +1,143 @@
-:root
-{
-    --mainColor:#24353f;
-    --textColor:#17a2b8;
-}
-::placeholder
-{
-    color: rgba(248, 238, 232, 0.8);
-    font-size: 17px;
-    font-weight: 100;
-}
-body
-{
-    background-color: var(--mainColor);
-}
-h1
-{
-    color: var(--textColor);
-}
-.content , .navbar
-{
-    background-color: var(--mainColor);
-    box-shadow: 1px 1px 30px 2px black;
-}
-input
-{
-    font-size: 1.2rem;
-    background-color: var(--mainColor);
-    border: 1px solid rgba(248, 238, 232, 0.8);;
+::-moz-placeholder {
+  color: rgba(248, 238, 232, 0.8);
+  font-size: 17px;
+  font-weight: 100;
 }
 
-button
-{
-    background-color: var(--mainColor);
-    border: 1px solid var(--textColor);
-    color: var(--textColor);
-    font-size: 1.1rem;
-}
-button:hover{
-    background-color: var(--textColor);
-    color: white;
-}
-label
-{
-    font-size: 1.1rem;
-}
-a
-{
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-.deco:hover
-{
-    text-decoration: underline;
+:-ms-input-placeholder {
+  color: rgba(248, 238, 232, 0.8);
+  font-size: 17px;
+  font-weight: 100;
 }
 
-.nav-link
-{
-    color: rgb(138, 137, 137);
+::placeholder {
+  color: rgba(248, 238, 232, 0.8);
+  font-size: 17px;
+  font-weight: 100;
 }
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+body {
+  background-color: #24353f;
 }
-.navbar-toggler {
-    color: rgba(255, 255, 255, 0.55);
-    border-color: rgba(255, 255, 255, 0.1);
+
+h1 {
+  color: #17a2b8;
 }
-.navbar-toggler:hover
-{
-    background-color: var(--mainColor);
+
+.content {
+  background-color: #24353f;
+  box-shadow: 1px 1px 30px 2px black;
 }
+.content input {
+  font-size: 1.2rem;
+  background-color: #24353f;
+  border: 1px solid rgba(248, 238, 232, 0.8);
+}
+.content label {
+  font-size: 1.1rem;
+}
+
+.navbar {
+  background-color: #24353f;
+  box-shadow: 1px 1px 30px 2px black;
+}
+.navbar .nav-link {
+  color: rgb(138, 137, 137);
+}
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar .navbar-toggler {
+  color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.navbar .navbar-toggler:hover {
+  background-color: #24353f;
+}
+
+button {
+  background-color: #24353f;
+  border: 1px solid #17a2b8;
+  color: #17a2b8;
+  font-size: 1.1rem;
+}
+button:hover {
+  background-color: #17a2b8;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.deco:hover {
+  text-decoration: underline;
+}
+
+.container {
+  height: 100%;
+}
+
+.test {
+  padding: 50px 0px;
+}
+.test i {
+  color: #FB063D;
+  font-size: 20px;
+}
+.test .bgplugin {
+  background-color: #3450A1;
+}
+.test .item {
+  background-color: #2f4f4f;
+  height: 60px;
+  color: white;
+  border-start-end-radius: 20px;
+  border-end-end-radius: 20px;
+}
+.test .icon, .test .icon3 {
+  background-color: #0f1118;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  height: 60px;
+}
+.test .icon2 {
+  background-color: #0f1118;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  height: 60px;
+}
+.test .icon3 i {
+  color: rgba(113, 132, 190, 0.8823529412);
+}
+.test .input {
+  padding: 14px;
+  background-color: #2f4f4f;
+  border: none;
+  border-radius: 20px;
+}
+.test .input:focus {
+  background-color: #2f4f4f;
+}
+.test #button {
+  position: absolute;
+  background-color: #24353f;
+  top: 7px;
+  right: 18px;
+  border-radius: 50%;
+}
+.test #button i {
+  color: #fff;
+}
+.test .check {
+  color: rgba(113, 132, 190, 0.8823529412);
+}
+.test #deletebtn {
+  cursor: pointer;
+}
+.test .line-decoration {
+  -webkit-text-decoration: line-through 4px black;
+          text-decoration: line-through 4px black;
+  background-color: #5C76BD;
+}/*# sourceMappingURL=style.css.map */

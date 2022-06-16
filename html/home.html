@@ -1,6 +1,9 @@
+
+
 <html>
 
 <head>
+    <link rel="stylesheet" href="../css/fontawesome-free-6.0.0-web/css/all.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>  
@@ -27,14 +30,25 @@
     </nav>
 
 
-    <div>
-        <div class="vh-100 container d-flex justify-content-center align-items-center">
-            <div class="content text-center w-75 p-5">
-                <h1>Welcome</h1>
-            </div>
+    <header class="header">
+        <div class="test">
+            <div class="container ">
+                <div class="row w-75 mx-auto text-center ">
+                    <h3 class="mt-5 p-3 text-light" >To Do List App</h3>
+                    <div class="position-relative mt-3">
+                        <input type="text" placeholder="Type Your Task Here ..." class="form-control input text-light  " >
+                        <button id="button" class="btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <h5 class="text-light text-start ms-3 pb-2  mt-5">Tasks To Do</h5>
+                </div>
+                <div id="test">
+                </div> 
+            </div>   
         </div>
-    </div>
+    </header>
 
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/home.js"></script>
 </body>

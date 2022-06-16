@@ -11,17 +11,19 @@ let emailExistsLabel = document.getElementById("emailExistsLabel");
 let requiredLabel = document.getElementById("requiredLabel");
 let signupBtn = document.getElementById("signupBtn");
 let checkValidateName = false, checkValidateEmail = false;;
-let y ;
-let x = []
+let users ;
+let useer = []
 
 if (localStorage.getItem("users") == null){
-    x = [];
+    useer = [];
 
 }else{
-    x = JSON.parse(localStorage.getItem("users"));
+    useer = JSON.parse(localStorage.getItem("users"));
 }
 signupBtn.addEventListener("click", signUP);
 
+
+//make validation for firstname
 firstname.addEventListener("blur", function () {
     if (validateName(this.value)) {
         checkValidateName = true;
@@ -32,7 +34,7 @@ firstname.addEventListener("blur", function () {
         inValidatefirstName.classList.replace("d-none", "d-block");
     }
 })
-
+//make validation for lastname
 lastname.addEventListener("blur", function () {
     if (validateName(this.value)) {
         checkValidateName = true;
@@ -43,7 +45,7 @@ lastname.addEventListener("blur", function () {
         inValidatelastName.classList.replace("d-none", "d-block");
     }
 })
-
+//make validation for email
 emailInput.addEventListener("blur", function () {
     if (validateEmail(this.value)) {
         checkValidateEmail = true;
@@ -55,16 +57,19 @@ emailInput.addEventListener("blur", function () {
     }
 })
 
+// make firstname and lastname rite like (Lina)
 function validateName(userName) {
     var regex = /^[A-Z][a-z]{3,20}$/;
     return regex.test(userName);
 }
 
+// make email rite like (lina@yahoo.com or .in)
 function validateEmail(userEmail) {
     var regex = /^[a-z|.]{3,}([1-9]?|[1-9][0-9]{0,2})@[a-z]{5,10}.(com|in)$/;
     return regex.test(userEmail);
 }
 
+//check if inputs is emapty or not 
 function checkValidate() {
     if (firstname.value.trim() == "" ||lastname.value.trim()==""|| emailInput.value.trim() == "" || passwordInput.value.trim() == "") {
         requiredLabel.classList.replace("d-none", "d-block");
@@ -78,10 +83,12 @@ function checkValidate() {
         return true;
     }
 }
+
+//cheack if email repted or not in User APi
 function notRepeatEmail() {
     var check = false;
-    for (var i = 0; i < y.length; i++) {
-        if (emailInput.value == y[i].email) {
+    for (var i = 0; i < users.length; i++) {
+        if (emailInput.value == users[i].email) {
             check = true;
             break;
         }
@@ -95,6 +102,8 @@ function notRepeatEmail() {
         return true;
     }
 }
+
+//signup  function 
 function signUP() {
     if (checkValidate()) {
         if (notRepeatEmail()) {
@@ -104,9 +113,9 @@ function signUP() {
                 email: emailInput.value,
                 Password: passwordInput.value
             };
-            y.push(user);
-            x.push(y)
-            localStorage.setItem("users", JSON.stringify(y));
+            users.push(user);
+            useer.push(users)
+            localStorage.setItem("users", JSON.stringify(users));
             clear();
             emailExistsLabel.classList.replace("d-block", "d-none");
             successLabel.classList.replace("d-none", "d-block");
@@ -114,8 +123,8 @@ function signUP() {
             console.log('repeted');
         }
     }
-    console.log("hellowwwww");
 }
+//clear input after 
 function clear() {
     firstname.value = "",
     lastname.value = ""
@@ -123,11 +132,12 @@ function clear() {
     passwordInput.value = "";
 }
 
+// fetch api for take dataUser to display it
 async function getUser()
 {
     let apiResponse = await fetch(`https://reqres.in/api/users`);
     let finalResponse = await apiResponse.json();
-        y = finalResponse.data;
+        users = finalResponse.data;
 }
 
 getUser()
